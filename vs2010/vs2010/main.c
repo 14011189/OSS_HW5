@@ -228,7 +228,6 @@ void boss(int vet[dim][dim],int dif)
 
 
 }
-
 void ia_boss2(int vet[dim][dim],int dif)
 {
     int i,l,num,flag,k,spara;
@@ -775,19 +774,16 @@ void intelligenza_artificiale(int vet[dim][dim],int dif)         // Funzione che
 
 }
 
-int condizione_vittoria(int vet[dim][dim])            
-// Function to verify the player's win or defeat condition
+int condizione_vittoria(int vet[dim][dim])            // Funzione per verificare la condizione di vittoria o sconfitta del giocatore
 {
-    int i,l,flag=0,giocatore=0;                         // Variable initialization
+    int i,l,flag=0,giocatore=0;                         // inizializzo variabili
 
     for(i=0;i<dim;i++){
         for(l=0;l<dim;l++){
-            if(vet[i][l]==3||vet[i][l]==7||vet[i][l]==10||vet[i][l]==12||vet[i][l]==14){                          
-  // I seek the presence of both the player and the enemy on the playing field
-                flag=1; 					// There is a flag if I find an enemy
-
+            if(vet[i][l]==3||vet[i][l]==7||vet[i][l]==10||vet[i][l]==12||vet[i][l]==14){                           //cerco la presenza sia del giocatore che dei nemici sul campo di gioco
+                flag=1;                                 // c'è un flag se trovo un nemico
             }if(vet[i][l]==2){
-                giocatore=1; 				// Another flag if I find the player
+                giocatore=1;                            // un altro flag se trovo il giocatore
             }
         }
     }
@@ -795,8 +791,7 @@ int condizione_vittoria(int vet[dim][dim])
     if(flag==1&&giocatore==1)
     {
         return 0;
-    }else if(flag==0&&giocatore==1){                 
-// According to who was found on the field, the function returns different values
+    }else if(flag==0&&giocatore==1){                   //Secondo chi è stato trovato sul campo la funzione restituisce valori differenti
         return 1;
     }else if(flag==1&&giocatore==0){
         return 2;
@@ -805,6 +800,7 @@ int condizione_vittoria(int vet[dim][dim])
     }
 
 }
+
 
 
 void mossa_giocatore(int vet[dim][dim],int azione,int sound)                    // Funzione per le azioni che può fare il giocatore, premendo sul tastierino numerico
